@@ -68,18 +68,21 @@ header, footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   background: #013b6b;
   color: white;
 }
 
 footer {
-  height: 70px;
+  height: 80px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header {
-  height: 120px;
+  height: 117px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .search-cnt p:first-child {
@@ -121,7 +124,7 @@ main {
   background: url(https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_library_bacteria-800x428.png) no-repeat;
   background-size: 100% 100%;
   overflow: auto;
-  height: 80vh;
+  height: 77vh;
 }
 
 .add-book {
@@ -154,6 +157,22 @@ main {
   background: #07ec7a;
 }
 
+.add-book__add-btn {
+  cursor: pointer;
+  padding: 8px 25px;
+  border-radius: 5px;
+  border: none;
+  background: #b7d2f5;
+}
+
+.add-book__add-btn:hover {
+  background: #77a2db;
+}
+
+.add-book__add-btn:active {
+  background: #b7d2f5;
+}
+
 .add-book__form {
   height: 0;
   overflow: hidden;
@@ -167,6 +186,7 @@ main {
 
 .add-book__form .input-cnt {
   margin-bottom: 20px;
+  margin-top: 1px;
 }
 
 .add-book__form label {
@@ -201,24 +221,26 @@ main {
   height: 300px;
   margin-right: 60px;
   overflow: hidden;
-  -webkit-transition: height 500ms linear, width 500ms linear, margin 500ms linear;
-  transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+  -webkit-transition: 700ms linear;
+  transition: 700ms linear;
 }
 
 .book {
   height: 0;
   width: 0;
   padding: 0;
-  margin-top: 150px 0 0 100px;
+  margin: 150px 0 0 100px;
   background-color: #048947;
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJDky7kQv1GXikzPG4EzgfubBqJEqaSdKpSg&usqp=CAU) no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
-  -webkit-transition: height 500ms linear, width 500ms linear, margin 500ms linear;
-  transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+  -webkit-transition: 700ms linear;
+  transition: 700ms linear;
 }
 
 .book__interactivity {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,6 +251,8 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: calc(100% - 30px);
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
 }
 
 .book__read {
@@ -300,12 +324,27 @@ main {
   font-family: Roboto, sans-serif;
   font-size: 1.4rem;
   font-weight: 900;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition-delay: 1300ms;
+          transition-delay: 1300ms;
+}
+
+.book__author {
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition-delay: 1500ms;
+          transition-delay: 1500ms;
 }
 
 .book__pages {
   font-size: .9rem;
   bottom: 6px;
   right: 12px;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition-delay: 1800ms;
+          transition-delay: 1800ms;
 }
 
 /* helper classes */
@@ -316,6 +355,7 @@ main {
 }
 
 .book-scale-up {
+  border-radius: 0;
   height: 300px;
   width: 200px;
   padding: 10px 15px;
@@ -323,12 +363,21 @@ main {
 }
 
 .form-scale-up {
-  height: 166px;
+  height: 178px;
 }
 
 .search-scale-up {
   height: 57px;
   top: 110%;
+}
+
+.text-arrive {
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .rel {
@@ -355,7 +404,24 @@ main {
   display: none;
 }
 
-.text-green {
+.yes-read {
   color: green;
+}
+
+.yes-read span {
+  background: url(https://www.uberdoo.com/images/tick1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

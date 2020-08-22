@@ -12,8 +12,10 @@ $secondary-clr: #07ec7a;
 
 $input-width: 230px;
 
+// those variables are important for animations
 $book-width: 200px;
 $book-height: 300px;
+$book-animation-speed: 700ms;
 
 @function set-text-clr($clr){
     @if(lightness($clr) > 40%){
@@ -23,7 +25,6 @@ $book-height: 300px;
         @return white;
     }
 }
-
 /* styling */
 
 
@@ -71,16 +72,17 @@ header,footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     background: $primary-clr;
     color: set-text-clr($primary-clr);
     
 }
 footer{
-    height: 70px;
+    height: 80px;
+    justify-content: flex-end;
 }
 header{
-    height: 120px;
+    height: 117px;
+    justify-content: space-around;
 }
 
 // header elements styling
@@ -113,15 +115,13 @@ header{
     }
 }
 
-
-
 main{
     display: flex;
     background-color: rgb(61, 99, 168);
     background: url(https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_library_bacteria-800x428.png) no-repeat;
     background-size: 100% 100%;
     overflow: auto;
-    height: 80vh;
+    height: 77vh;
 }
 
 // main elements styling
@@ -148,6 +148,19 @@ main{
             background: $secondary-clr;
         }
     }
+    &__add-btn{
+        cursor: pointer;
+        padding: 8px 25px;
+        border-radius: 5px;
+        border: none;
+        background: rgb(183, 210, 245);
+        &:hover{
+            background: rgb(119, 162, 219);
+        }
+        &:active{
+            background: rgb(183, 210, 245);
+        }
+    }
     &__form{
         height: 0;
         overflow: hidden;
@@ -156,6 +169,9 @@ main{
         transition: height 1s ease-in-out;
         .input-cnt{
             margin-bottom: 20px;
+
+            // this margin is here because sometimes animation bugged and was seen like 1px of forms height, so i had to push input a bit lower
+            margin-top: 1px;
         }
         label{
             font-family: sans-serif;
@@ -186,23 +202,25 @@ main{
     height: $book-height;
     margin-right: 60px;
     overflow: hidden;
-    transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+    transition: $book-animation-speed linear;
 }
 .book{
     height: 0;
     width: 0;
     padding: 0;
-    margin-top: $book-height/2 0 0 $book-width/2;
+    margin: $book-height/2 0 0 $book-width/2;
     background-color: darken($secondary-clr, 20%);
     background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJDky7kQv1GXikzPG4EzgfubBqJEqaSdKpSg&usqp=CAU) no-repeat;
     background-size: 100% 100%;
     overflow: hidden;
-    transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+    transition: $book-animation-speed linear;
     &__interactivity{
+        transform: translateY(-$book-height/6);
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: calc(100% - 30px);
+        transition-delay: 600ms;
     }
     &__read{
         margin-left: -3px;
@@ -252,11 +270,19 @@ main{
         font-family: Roboto, sans-serif;
         font-size: 1.4rem;
         font-weight: 900;
+        transform: translateX(-$book-width);
+        transition-delay: 1300ms;
+    }
+    &__author{
+        transform: translateX(-$book-width);
+        transition-delay: 1500ms;
     }
     &__pages{
         font-size: .9rem;
         bottom: 6px;
         right: 12px;
+        transform: translateX(-$book-width);
+        transition-delay: 1800ms;
     }
 }
 
@@ -269,17 +295,23 @@ main{
     margin: 0;
 }
 .book-scale-up{
+    border-radius: 0;
     height: $book-height;
     width: $book-width;
     padding: 10px 15px;
     margin: 0;
 }
 .form-scale-up{
-    height: 166px;
+    height: 178px;
 }
 .search-scale-up{
     height: 57px;
     top: 110%;
+}
+.text-arrive{
+    transition-duration: 700ms;
+    transition-timing-function: linear;
+    transform: translate(0,0);
 }
 // positioning
 .rel{
@@ -300,6 +332,15 @@ main{
 .hide{
     display: none;
 }
-.text-green{
+.yes-read{
     color: green;
+    span{
+        background: url(https://www.uberdoo.com/images/tick1.png) no-repeat;
+        background-size: 100% 100%;
+    }
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
