@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Book's Library</h1>
+        <div id="search-cnt" class="search-cnt rel">
+            <p>Search:</p>
+            <div id="search-title" class="input-cnt input-cnt--offset-right rel" data-search-active="true"
+                data-search="[data-title]">
+                <input type="text" placeholder="title"> <span class="caret abs" data-caret></span>
+            </div>
+            <div id="search-author" class="input-cnt input-cnt--offset-right rel hide" data-search-active="false"
+                data-search="[data-author]">
+                <input type="text" placeholder="author"> <span class="caret abs" data-caret></span>
+            </div>
+            <div id="search-pages" class="input-cnt input-cnt--offset-right rel hide" data-search-active="false"
+                data-search="[data-pages]">
+                <input type="text" placeholder="pages"> <span class="caret abs" data-caret></span>
+            </div>
+            <ul id="search-options" class="search-options abs z1">
+                <li data-show="search-title" data-hide="[data-search-active=true]">title</li>
+                <li data-show="search-author" data-hide="[data-search-active=true]">author</li>
+                <li data-show="search-pages" data-hide="[data-search-active=true]">pages</li>
+            </ul>
+        </div>
+
+    </header>
+
+
+    <main>
+        <div class="add-book">
+            <button class="add-book__btn">add book</button>
+            <form class="add-book__form">
+                <div class="input-cnt">
+                    <input id="add-title" type="text" placeholder="title">
+                </div>
+                <div class="input-cnt">
+                    <input id="add-author" type="text" placeholder="author">
+                </div>
+                <div class="input-cnt">
+                    <input id="add-pages" type="number" placeholder="pages">
+                </div>
+                <label>
+                    <input type="checkbox"> READ
+                </label>
+            </form>
+        </div>
+
+        <div class="books-cnt">
+
+
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+            <div id="book-cnt" class="book-cnt" data-book>
+                <div class="book book-scale-up rel" data-content>
+                    <div class="book__interactivity abs">
+
+                        <!-- by default read will be styled as not-read -->
+                        <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                        </p>
+                        <div class="book__remove-btn rel" title="delete book">
+
+                        </div>
+                    </div>
+                    <div class="book__content">
+                        <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                        <p class="book__author" data-author>J.K. Rowling</p>
+                        <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Contact:</p>
+        <div class="social-icons">
+            <a target="_blank" href="https://github.com/janko12345"><i class="fab fa-github"></i></a>
+            <a target="_blank" href="https://www.instagram.com/henosury/"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.facebook.com/henoplastoveretazky.sury/"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+
+
+    <!-- templates -->
+    <div id="book-template" class="hide">
+        <div id="book-cnt" class="book-cnt" data-book>
+            <div class="book book-scale-up rel" data-content>
+                <div class="book__interactivity abs">
+
+                    <!-- by default read will be styled as not-read -->
+                    <p class="book__read" title="change read status"><span class="book__read-mark"></span>READ
+                    </p>
+                    <div class="book__remove-btn rel" title="delete book">
+
+                    </div>
+                </div>
+                <div class="book__content">
+                    <p class="book__title" data-title>Harry Potter a Kameň Mudrcov</p>
+                    <p class="book__author" data-author>J.K. Rowling</p>
+                    <p class="book__pages abs"><span data-pages>233</span> pages</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/129caeb1d2.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

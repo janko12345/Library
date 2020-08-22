@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus{
+    outline: none;
+}
+/* sass stuff */
+$primary-clr: #013b6b;
+$secondary-clr: #07ec7a;
+
+$input-width: 230px;
+
+$book-width: 200px;
+$book-height: 300px;
+
+@function set-text-clr($clr){
+    @if(lightness($clr) > 40%){
+        @return black;
+    }
+    @else{
+        @return white;
+    }
+}
+
+/* styling */
+
+
+// general styling
+li{
+    list-style-type: none;
+}
+input{
+    font-size: 1rem;
+}
+.fab{
+    color: rgb(115, 255, 0);
+}
+.fab:hover{
+    color: lighten($color: $primary-clr, $amount: 30%);
+}
+.input-cnt{
+    width: $input-width;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    input{
+        width: 100%;
+        background: transparent;
+        border: none;
+    }
+    &--offset-right{
+        padding-right: 20px;
+    }
+}
+.caret{
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Caret_down_font_awesome.svg/1024px-Caret_down_font_awesome.svg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+// styling in order of page
+header,footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: $primary-clr;
+    color: set-text-clr($primary-clr);
+    
+}
+footer{
+    height: 70px;
+}
+header{
+    height: 120px;
+}
+
+// header elements styling
+.search-cnt{
+    p:first-child{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-115%,-50%);
+        
+    }
+}
+.search-options{
+    height: 0;
+    color: black;
+    overflow: hidden;
+    border-radius: 5px;
+    background: white;
+    width: $input-width;
+    right:0;
+    top: 5px;
+    transition: 700ms ease-in-out;
+    li{
+        padding: 0 5px;
+        &:hover{
+            cursor: pointer;
+            padding-left: 10px;
+            background: #ccc;
+        }
+    }
+}
+
+
+
+main{
+    display: flex;
+    background-color: rgb(61, 99, 168);
+    background: url(https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_library_bacteria-800x428.png) no-repeat;
+    background-size: 100% 100%;
+    overflow: auto;
+    height: 80vh;
+}
+
+// main elements styling
+.add-book{
+    margin-top: 20px;
+    position: sticky;
+    top: 20px;
+    flex: 2;
+    &__btn{
+        
+        background: $secondary-clr;
+        border: none;
+        color: set-text-clr($secondary-clr);
+        padding: 10px 30px;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        &:hover{
+            cursor: pointer;
+            background: lighten($secondary-clr,20%);
+        }
+        &:active{
+            background: $secondary-clr;
+        }
+    }
+    &__form{
+        height: 0;
+        overflow: hidden;
+        width: fit-content;
+        margin: 0 auto;
+        transition: height 1s ease-in-out;
+        .input-cnt{
+            margin-bottom: 20px;
+        }
+        label{
+            font-family: sans-serif;
+            color: white;
+        }
+        
+    }
+}
+.books-cnt{
+    flex: 6;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
+// footer elements styling
+.social-icons{
+    font-size: 2.5rem;
+    margin-bottom: 4px;
+    a + a{
+        margin-left: 10px;
+    }
+}
+
+/* templates styling */
+.book-cnt{
+    width: $book-width;
+    height: $book-height;
+    margin-right: 60px;
+    overflow: hidden;
+    transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+}
+.book{
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin-top: $book-height/2 0 0 $book-width/2;
+    background-color: darken($secondary-clr, 20%);
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJDky7kQv1GXikzPG4EzgfubBqJEqaSdKpSg&usqp=CAU) no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+    &__interactivity{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 30px);
+    }
+    &__read{
+        margin-left: -3px;
+        cursor: pointer;
+        color: red;
+        &-mark{
+            display: inline-block;
+            margin-right: 5px;
+            background: url(https://www.pinclipart.com/picdir/big/88-882904_mermaiden-crystal-dress-up-game-white-x-icon.png) no-repeat;
+            background-size: 100% 100%;
+            width: 12px;
+            height: 12px;
+        }
+    }
+    &__remove-btn{
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:before,&:after{
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 20px;
+            background: white;
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+    &__content{
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    &__title{
+        font-family: Roboto, sans-serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+    }
+    &__pages{
+        font-size: .9rem;
+        bottom: 6px;
+        right: 12px;
+    }
+}
+
+/* helper classes */
+
+// animations
+.book-scale-down{
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+.book-scale-up{
+    height: $book-height;
+    width: $book-width;
+    padding: 10px 15px;
+    margin: 0;
+}
+.form-scale-up{
+    height: 166px;
+}
+.search-scale-up{
+    height: 57px;
+    top: 110%;
+}
+// positioning
+.rel{
+    position: relative;
+}
+.abs{
+    position: absolute;
+}
+.z1{
+    z-index: 1;
+}
+.z2{
+    z-index: 2;
+}
+.z3{
+    z-index: 3;
+}
+.hide{
+    display: none;
+}
+.text-green{
+    color: green;
+}

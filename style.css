@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* sass stuff */
+/* styling */
+li {
+  list-style-type: none;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.fab {
+  color: #73ff00;
+}
+
+.fab:hover {
+  color: #088efd;
+}
+
+.input-cnt {
+  width: 230px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.input-cnt input {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.input-cnt--offset-right {
+  padding-right: 20px;
+}
+
+.caret {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 4px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Caret_down_font_awesome.svg/1024px-Caret_down_font_awesome.svg.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+header, footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #013b6b;
+  color: white;
+}
+
+footer {
+  height: 70px;
+}
+
+header {
+  height: 120px;
+}
+
+.search-cnt p:first-child {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(-115%, -50%);
+          transform: translate(-115%, -50%);
+}
+
+.search-options {
+  height: 0;
+  color: black;
+  overflow: hidden;
+  border-radius: 5px;
+  background: white;
+  width: 230px;
+  right: 0;
+  top: 5px;
+  -webkit-transition: 700ms ease-in-out;
+  transition: 700ms ease-in-out;
+}
+
+.search-options li {
+  padding: 0 5px;
+}
+
+.search-options li:hover {
+  cursor: pointer;
+  padding-left: 10px;
+  background: #ccc;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #3d63a8;
+  background: url(https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_library_bacteria-800x428.png) no-repeat;
+  background-size: 100% 100%;
+  overflow: auto;
+  height: 80vh;
+}
+
+.add-book {
+  margin-top: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.add-book__btn {
+  background: #07ec7a;
+  border: none;
+  color: black;
+  padding: 10px 30px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.add-book__btn:hover {
+  cursor: pointer;
+  background: #5ffaad;
+}
+
+.add-book__btn:active {
+  background: #07ec7a;
+}
+
+.add-book__form {
+  height: 0;
+  overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  -webkit-transition: height 1s ease-in-out;
+  transition: height 1s ease-in-out;
+}
+
+.add-book__form .input-cnt {
+  margin-bottom: 20px;
+}
+
+.add-book__form label {
+  font-family: sans-serif;
+  color: white;
+}
+
+.books-cnt {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.social-icons {
+  font-size: 2.5rem;
+  margin-bottom: 4px;
+}
+
+.social-icons a + a {
+  margin-left: 10px;
+}
+
+/* templates styling */
+.book-cnt {
+  width: 200px;
+  height: 300px;
+  margin-right: 60px;
+  overflow: hidden;
+  -webkit-transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+  transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+}
+
+.book {
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin-top: 150px 0 0 100px;
+  background-color: #048947;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJDky7kQv1GXikzPG4EzgfubBqJEqaSdKpSg&usqp=CAU) no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  -webkit-transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+  transition: height 500ms linear, width 500ms linear, margin 500ms linear;
+}
+
+.book__interactivity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 30px);
+}
+
+.book__read {
+  margin-left: -3px;
+  cursor: pointer;
+  color: red;
+}
+
+.book__read-mark {
+  display: inline-block;
+  margin-right: 5px;
+  background: url(https://www.pinclipart.com/picdir/big/88-882904_mermaiden-crystal-dress-up-game-white-x-icon.png) no-repeat;
+  background-size: 100% 100%;
+  width: 12px;
+  height: 12px;
+}
+
+.book__remove-btn {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book__remove-btn:before, .book__remove-btn:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: white;
+}
+
+.book__remove-btn:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.book__remove-btn:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.book__content {
+  height: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.book__title {
+  font-family: Roboto, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.book__pages {
+  font-size: .9rem;
+  bottom: 6px;
+  right: 12px;
+}
+
+/* helper classes */
+.book-scale-down {
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+.book-scale-up {
+  height: 300px;
+  width: 200px;
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.form-scale-up {
+  height: 166px;
+}
+
+.search-scale-up {
+  height: 57px;
+  top: 110%;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.z3 {
+  z-index: 3;
+}
+
+.hide {
+  display: none;
+}
+
+.text-green {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */
