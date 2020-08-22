@@ -1,7 +1,6 @@
 /* cnt or cnts shortcuts means container or containers */
 class Book {
     static array = [];
-    symbol = Symbol();
     constructor(title, author, pages, read) {
         this.title = title;
         this.author = author;
@@ -291,8 +290,10 @@ const BookControls = (function () {
 
 (function InitialRender() {
     Book.array = JSON.parse(localStorage.getItem("books"));
-    if (!Book.array)
+    if (!Book.array) {
+        Book.array = [];
         return;
+    }
     let length = Book.array.length;
     let timeoutBooster = length > 15 ? 15 : length;
     Book.array.forEach((book, index) => {
