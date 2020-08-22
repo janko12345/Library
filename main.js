@@ -276,6 +276,11 @@ const BookControls = (function () {
                 e.target.parentElement.classList.toggle("yes-read");
             else
                 e.target.classList.toggle("yes-read");
+
+            // saving the data
+            let dataBook = Book.array[e.target.closest("[data-book]").dataset.index];
+            dataBook.read = !dataBook.read;
+            AddBook.updateLocalStorage();
         }
 
     }
