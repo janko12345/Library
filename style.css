@@ -162,15 +162,18 @@ main {
   padding: 8px 25px;
   border-radius: 5px;
   border: none;
-  background: #b7d2f5;
-}
-
-.add-book__add-btn:hover {
+  color: black;
   background: #77a2db;
 }
 
+.add-book__add-btn:hover {
+  color: white;
+  background: #4274b6;
+}
+
 .add-book__add-btn:active {
-  background: #b7d2f5;
+  color: black;
+  background: #77a2db;
 }
 
 .add-book__form {

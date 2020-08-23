@@ -153,12 +153,16 @@ main{
         padding: 8px 25px;
         border-radius: 5px;
         border: none;
-        background: rgb(183, 210, 245);
+        color: black;
+        background: rgb(119, 162, 219);
         &:hover{
-            background: rgb(119, 162, 219);
+            color: white;
+            background: rgb(66, 116, 182);
         }
         &:active{
-            background: rgb(183, 210, 245);
+            color: black;
+            background: rgb(119, 162, 219);
+    
         }
     }
     &__form{

@@ -94,7 +94,7 @@ const SearchBook = (function () {
 
     })
     searchCnts.forEach(searchCnt => {
-        searchCnt.addEventListener("click", hideSearchOptions)
+        searchCnt.querySelector("input").addEventListener("click", hideSearchOptions)
     })
     mainSearchCnt.addEventListener("click", e => {
         if (e.target.hasAttribute("data-caret"))
@@ -286,7 +286,6 @@ const BookControls = (function () {
     }
     function updateIndexes() {
         allBooksCnt.querySelectorAll("[data-book]").forEach((book, index) => {
-            console.log(index);
             book.setAttribute("data-index", `${index}`);
         })
 
