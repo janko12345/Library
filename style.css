@@ -70,19 +70,24 @@ header, footer {
           align-items: center;
   background: #013b6b;
   color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  width: 100%;
 }
 
 footer {
-  height: 80px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  bottom: 0;
 }
 
 header {
-  height: 117px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  top: 0;
+  padding: 5px 0 15px;
+}
+
+header h1 {
+  margin-bottom: .3em;
 }
 
 .search-cnt p:first-child {
@@ -117,24 +122,32 @@ header {
 }
 
 main {
+  padding-top: 94px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #3d63a8;
   background: url(https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_library_bacteria-800x428.png) no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center bottom;
+  height: 100vh;
   overflow: auto;
-  height: 77vh;
 }
 
 .add-book {
+  -ms-flex-preferred-size: 480px;
+      flex-basis: 480px;
   margin-top: 20px;
   position: -webkit-sticky;
   position: sticky;
   top: 20px;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .add-book__btn {
@@ -198,6 +211,7 @@ main {
 }
 
 .books-cnt {
+  padding-top: 20px;
   -webkit-box-flex: 6;
       -ms-flex: 6;
           flex: 6;
@@ -207,6 +221,14 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   row-gap: 30px;
+}
+
+@media (max-width: 1015px) {
+  .books-cnt {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .social-icons {
@@ -226,6 +248,12 @@ main {
   overflow: hidden;
   -webkit-transition: 700ms linear;
   transition: 700ms linear;
+}
+
+@media (max-width: 520px) {
+  .book-cnt {
+    margin: 0 30px;
+  }
 }
 
 .book {
