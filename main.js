@@ -75,7 +75,6 @@ const AnimateDOM = (function () {
         showBook,
     }
 })();
-console.log(getComputedStyle(document.querySelector("footer")).height);
 const SearchBook = (function () {
     const searchCnts = getObjElement.searchCnts;
     const searchOptions = getObjElement.searchOptions;
